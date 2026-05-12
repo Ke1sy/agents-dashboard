@@ -1,0 +1,134 @@
+.topbar {
+  display: flex;
+  align-items: center;
+  background: var(--color-topbar-bg);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  padding: 0 28px 0 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: calc(1203px + 56px);
+  margin: 0 auto;
+  height: 100%;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  min-width: 0;
+}
+
+.menuBtn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: transparent;
+  margin-left: 8px;
+  transition: background 0.15s;
+}
+
+.menuBtn:hover {
+  background: var(--color-content-bg);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 60px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--color-border);
+  align-self: stretch;
+}
+
+@media (max-width: 768px) {
+  .menuBtn {
+    display: flex;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .inner {
+    padding: 0 12px;
+    height: auto;
+    min-height: 60px;
+  }
+
+  .title {
+    display: none;
+  }
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 24px;
+  color: #303240;
+  padding-left: 30px;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.iconBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: transparent;
+  transition: background 0.15s;
+}
+
+.iconBtn:hover {
+  background: var(--color-content-bg);
+}
+
+.avatarBtn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: transparent;
+  transition: background 0.15s;
+}
+
+.avatarBtn:hover {
+  background: var(--color-content-bg);
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}

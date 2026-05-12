@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+3:wght@400;600&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-primary: #512eab;
+  --color-primary-hover: #3f2285;
+  --color-primary-light: #ebedf5;
+  --color-sidebar-bg: #ffffff;
+  --color-content-bg: #f5f6fa;
+  --color-card-bg: #ffffff;
+  --color-topbar-bg: #ffffff;
+  --color-text-primary: #303240;
+  --color-text-secondary: #6c6f80;
+  --color-text-muted: #6c6f80;
+  --color-text-dark: #111111;
+  --color-border: #e1e3eb;
+  --color-sidebar-border: #ced0db;
+  --radius-card: 12px;
+  --shadow-card: drop-shadow(rgba(29, 30, 38, 0.1) 0px 3px 3px)
+    drop-shadow(rgba(29, 30, 38, 0.05) 0px 0px 1.5px);
+  --font: 'Inter', sans-serif;
+  --font-heading: 'Source Sans 3', 'Source Sans Pro', sans-serif;
+}
+
+body {
+  font-family: var(--font);
+  font-size: 16px;
+  background: var(--color-content-bg);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: var(--font);
+  cursor: pointer;
+  border: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

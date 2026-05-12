@@ -1,0 +1,52 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.avatarWrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heading {
+  font-family: var(--font);
+  font-size: 34px;
+  font-weight: 400;
+  font-style: normal;
+  color: #474a59;
+  white-space: nowrap;
+}
+
+.name {
+  background-image: linear-gradient(
+    150.44deg,
+    rgb(35, 86, 226) 54.053%,
+    rgb(0, 71, 255) 5.136%,
+    rgb(175, 65, 255) 94.575%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 26px;
+  }
+  .avatarWrap {
+    width: 44px;
+    height: 44px;
+  }
+}
