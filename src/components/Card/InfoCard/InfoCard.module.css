@@ -3,16 +3,16 @@
   border-radius: var(--radius-card);
   filter: var(--shadow-card);
   padding: 24px 24px 36px;
-  border: 1px solid rgba(0, 0, 0, 0.03);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  align-items: stretch;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  transition: filter 0.2s;
 }
 
-.cardHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.card:hover {
+  filter: drop-shadow(rgba(81, 46, 171, 0.12) 0px 4px 18px)
+    drop-shadow(rgba(29, 30, 38, 0.05) 0px 0px 1.5px);
 }
 
 .title {
@@ -22,46 +22,22 @@
   font-style: normal;
   line-height: 24px;
   color: #303240;
-  flex: 1;
-  position: relative;
+  margin-bottom: 15px;
 }
 
-.editBtn {
+.illustration {
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 4px;
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--color-text-secondary);
-  background: transparent;
-  transition: color 0.15s;
-  flex-shrink: 0;
-  white-space: nowrap;
+  padding: 16px 0 12px;
 }
 
-.editBtn:hover {
-  color: var(--color-primary);
-}
-
-.empty {
-  height: 60px;
-}
-
-.bigNumber {
-  font-size: 90px;
-  font-weight: 300;
-  color: var(--color-primary);
-  line-height: 1;
-  text-align: center;
-  letter-spacing: -0.04em;
-  padding: 8px 0;
-}
-
-.sub {
+.description {
   font-size: 16px;
   color: #303240;
   text-align: center;
-  line-height: 1.5;
+  line-height: 1.55;
+  margin-bottom: 18px;
   max-width: 190px;
   align-self: center;
 }
@@ -74,14 +50,20 @@
   font-size: 14px;
   font-weight: 600;
   border-radius: 3px;
-  transition: background 0.15s;
-  margin-top: 4px;
+  transition:
+    background 0.18s,
+    transform 0.1s;
 }
 
 .ctaBtn:hover {
   background: var(--color-primary-hover);
 }
 
+.ctaBtn:active {
+  transform: scale(0.98);
+}
+
+/* ── Skeleton loading ────────────────────────────── */
 .skeleton {
   display: flex;
   flex-direction: column;
@@ -101,13 +83,6 @@
   }
 }
 
-.skeletonNumber {
-  width: 80px;
-  height: 90px;
-  border-radius: 8px;
-  background: #e1e3eb;
-}
-
 .skeletonLine {
   height: 13px;
   border-radius: 6px;
@@ -123,6 +98,7 @@
   margin-top: 4px;
 }
 
+/* ── Error state ─────────────────────────────────── */
 .errorState {
   display: flex;
   flex-direction: column;
@@ -154,35 +130,4 @@
 
 .retryBtn:hover {
   background: var(--color-primary-hover);
-}
-
-.avatarRow {
-  display: flex;
-  align-items: center;
-}
-
-.avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 2px solid white;
-  object-fit: cover;
-  margin-right: -10px;
-  flex-shrink: 0;
-}
-
-.overflow {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: rgb(248, 246, 254);
-  color: var(--color-primary);
-  font-size: 18px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1.5px solid var(--color-primary-light);
-  outline: 2px solid white;
-  flex-shrink: 0;
 }

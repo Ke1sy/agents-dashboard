@@ -20,3 +20,8 @@ export interface QuickAction {
   type: 'link' | 'toast' | 'console'
   payload?: string
 }
+
+export interface Campaign {
+  name: string
+  date: string
+}

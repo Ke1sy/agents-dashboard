@@ -1,4 +1,4 @@
-import type { AgentConfig, OrganizationsData, QuickAction } from '../types'
+import type { AgentConfig, OrganizationsData, QuickAction, Campaign } from '../types'
 
 export const mockAgentConfig: AgentConfig = {
   title: 'Agent configuration',
@@ -58,5 +58,23 @@ export function fetchAgentConfig(shouldFail = false): Promise<AgentConfig> {
         resolve(mockAgentConfig)
       }
     }, 1200)
+  })
+}
+
+export const mockCampaigns: Campaign[] = [
+  { name: 'Bosch / WorkVoice campaign / 12 role interviews', date: 'October 31, 2025' },
+  { name: 'IBM / WorkVoice campaign / 8 role interviews', date: 'October 31, 2025' },
+  { name: 'Nike / WorkVoice campaign / 10 role interviews', date: 'October 31, 2025' },
+]
+
+export function fetchCampaigns(shouldFail = false): Promise<Campaign[]> {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (shouldFail) {
+        reject(new Error('Failed to load campaigns.'))
+      } else {
+        resolve(mockCampaigns)
+      }
+    }, 700)
   })
 }

@@ -1,0 +1,222 @@
+.campaignsCard {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-card);
+  filter: var(--shadow-card);
+  padding: 24px 24px 36px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.campaignsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.campaignsTitle {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 24px;
+  color: #303240;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.viewAll {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: transparent;
+  transition: opacity 0.15s;
+  border-radius: 3px;
+  padding: 3px 6px;
+}
+
+.viewAll:hover {
+  opacity: 0.75;
+}
+
+.campaignsBody {
+  display: flex;
+  gap: clamp(24px, 5vw, 70px);
+  align-items: center;
+}
+
+.counter {
+  position: relative;
+  width: 174px;
+  height: 174px;
+  flex-shrink: 0;
+}
+
+.counterBg {
+  position: absolute;
+  width: 144px;
+  height: 144px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.counterRing {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.counterText {
+  position: absolute;
+  top: 37px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.counterNumber {
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 66px;
+  color: var(--color-primary);
+}
+
+.counterLabel {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text-dark);
+  line-height: 18px;
+}
+
+.campaignList {
+  flex: 1;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.campaignRow {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--color-border);
+  transition: background 0.12s;
+}
+
+.campaignRow:last-child {
+  border-bottom: none;
+}
+.campaignRow:hover {
+  background: #f5f6fa;
+  border-radius: 8px;
+  padding-left: 8px;
+}
+
+.campaignIcon {
+  flex-shrink: 0;
+}
+
+.campaignName {
+  flex: 1;
+  font-size: 16px;
+  color: var(--color-text-dark);
+}
+
+.campaignDate {
+  font-size: 16px;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .campaignsBody {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+  .counter {
+    width: 140px;
+    height: 140px;
+    align-self: center;
+  }
+  .counterBg {
+    width: 114px;
+    height: 114px;
+  }
+  .counterNumber {
+    font-size: 48px;
+    line-height: 54px;
+  }
+  .counterText {
+    top: 30px;
+  }
+  .campaignRow {
+    flex-wrap: wrap;
+    gap: 4px 18px;
+  }
+  .campaignDate {
+    width: 100%;
+    padding-left: 36px;
+    font-size: 13px;
+    color: var(--color-text-secondary);
+  }
+}
+
+@media (max-width: 480px) {
+  .campaignName {
+    font-size: 14px;
+  }
+  .campaignDate {
+    font-size: 12px;
+  }
+}
+
+/* Loading skeleton */
+.skeletonList {
+  height: 120px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.03) 25%,
+    rgba(0, 0, 0, 0.06) 50%,
+    rgba(0, 0, 0, 0.03) 75%
+  );
+  background-size: 400px 100%;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  animation: shimmer 1.2s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+/* Error state */
+.errorText {
+  color: var(--color-danger, #b00020);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.retryBtn {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.retryBtn:hover {
+  opacity: 0.9;
+}

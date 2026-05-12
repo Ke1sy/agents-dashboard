@@ -1,7 +1,33 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { render, screen, waitFor, fireEvent } from '@testing-library/react'
-import AgentConfigWidget from '../components/dashboard/AgentConfigWidget'
-import QuickActions from '../components/ui/QuickActions'
+import { AgentConfigCard } from '../components/Card'
+import { useAsyncFetch } from '../hooks/useAsyncFetch'
+import { fetchAgentConfig } from '../data/mockData'
+
+// Wrapper to simulate page-level fetching and pass results as props
+function AgentConfigWidget({
+  onToast,
+  simulateError,
+}: {
+  onToast: (m: string) => void
+  simulateError?: boolean
+}) {
+  const { data, status, errorMsg, retry } = useAsyncFetch(
+    () => fetchAgentConfig(Boolean(simulateError)),
+    [simulateError]
+  )
+  return (
+    // pass fetched data to the props-only AgentConfigCard
+    <AgentConfigCard
+      onToast={onToast}
+      data={data}
+      status={status}
+      errorMsg={errorMsg}
+      onRetry={retry}
+    />
+  )
+}
+import QuickActions from '../components/QuickActions/QuickActions'
 import { mockQuickActions } from '../data/mockData'
 
 // ── AgentConfigWidget ──────────────────────────────────────────────────────

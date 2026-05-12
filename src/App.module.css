@@ -10,6 +10,18 @@
   position: relative;
 }
 
+.page {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--color-content-bg);
+}
+
+.content {
+  max-width: calc(1203px + 56px);
+  margin: 0 auto;
+  padding: 32px 28px 48px;
+}
+
 .overlay {
   display: none;
 }

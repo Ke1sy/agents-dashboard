@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import TopBar from './components/layout/TopBar'
-import Sidebar from './components/layout/Sidebar'
+import TopBar from './components/TopBar/TopBar'
+import Sidebar from './components/SideBar/Sidebar'
 import DashboardPage from './pages/DashboardPage'
 import styles from './App.module.css'
 
@@ -25,7 +25,12 @@ export default function App() {
             tabIndex={0}
           />
         )}
-        <DashboardPage />
+        <main className={styles.page}>
+          <div className={styles.content}>
+            {/* Router could be here ...*/}
+            <DashboardPage />
+          </div>
+        </main>
       </div>
     </div>
   )
