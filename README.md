@@ -33,14 +33,6 @@ Install dependencies:
 
 ```bash
 npm install
-# If you encounter peer dependency conflicts, re-run:
-npm install --legacy-peer-deps
-```
-
-Install optional testing helpers:
-
-```bash
-npm install @testing-library/dom --legacy-peer-deps
 ```
 
 ## Run (development)
